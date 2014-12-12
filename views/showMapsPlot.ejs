@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+	
+var chicago = new google.maps.LatLng(37.42, -121.78);
+var anchorage = new google.maps.LatLng(37.52, -121.68);
+var mexico = new google.maps.LatLng(37.32, -121.88);
+// var equator = new google.maps.LatLng(38.72, -121.48);
+// var london = new google.maps.LatLng(38.32, -121.78);
+// var johannesburg = new google.maps.LatLng(38.22, -121.78);
+// var kinshasa = new google.maps.LatLng(38.12, -121.78);
+
+// var locationArray = [chicago,anchorage,mexico,equator,london,johannesburg,kinshasa];
+// var locationNameArray = ['Chicago','Anchorage','Mexico City','The Equator','London','Johannesburg','Kinshasa'];
+var json = '{"website":"http://localhost:3000/bike_info?bikeId=1","latitude":37.22,"longitude":-121.98}'
+obj = JSON.parse(json);
+obj.titl = "downtown"
+
+// alert(obj.count);
+
+var points = [
+    ['Chicago', chicago, 'http://localhost:3000/bike_info?bikeId=1'],
+    ['Anchorage', anchorage, 'http://localhost:3000/bike_info?bikeId=2'],
+    ['Mexico', mexico, 'http://localhost:3000/bike_info?bikeId=3'],
+    [obj.titl, new google.maps.LatLng(Number(obj.latitude), Number(obj.longitude)), obj.website]
+];
+	
+function initialize() {
+  var sjsu = new google.maps.LatLng(37.335464, -121.881072);
+  var mapOptions = {
+    zoom: 8,
+    center: sjsu
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var coord;
+  for (coord in points) {
+
+    var marker = new google.maps.Marker({
+      position: points[coord][1],
+      map: map,
+      title: points[coord][0],
+      url: points[coord][2]
+      
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      // window.alert(this.url);
+      window.location = this.url;
+      // window.open(this.url);
+    });
+  } 
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>

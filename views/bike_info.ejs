@@ -1,0 +1,105 @@
+<html>
+	<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src ="js/bike.js"></script>
+	<script> 
+	function getTime() {
+	
+	var da = new Date();
+	var hours = da.getHours();
+	
+	var mins = da.getMinutes();
+	document.getElementById('startTimeTable').innerHTML = hours + ":" + mins;
+	}
+	</script>
+	
+		<link rel="stylesheet" type="text/css" href="css/newStyle.css">
+	</head>
+	<body onload="getTime()">
+	
+	<div id = "logomain">
+<img class = "logo" src="images/logo.png"></img></div>
+
+<div class="table-title">
+<h3>Select Bike</h3>
+</div>
+
+<table id ="bikeInfo"class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Bike</th>
+<th class="text-left">Start Time</th>
+<th class="text-left">End Time</th>
+<th class="text-left">Current Location</th>
+<th class="text-left">Select Bike</th>
+
+</tr>
+</thead>
+<tbody class="table-hover">
+<% json.forEach(function(json){%>
+<tr>
+<td class="text-left"><%=json.bikeName%></td>
+<td  id="startTimeTable" class="text-left"></td>
+<td class="text-left">11:59</td>
+<td class="text-left"><%=json.bikeCurrentLatitide%> | <%=json.bikeCurrentLongitude%> </td>
+<td class="text-left"> <a  onclick='getId("<%=json.bikeId%>");' class="action-button shadow animate blue">Select</a></td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="table-title">
+<h3>Select Duration</h3>
+<label>
+<form action="/trip_confirmation" method="POST">
+<span> Start Time  (Hours/Minutes) </span>
+    <select id="startHours" name="startHours">
+        <option selected> Select Hours </option>
+    </select>
+  <select id ="startMinutes"  name="startMinutes">
+ 
+         <option selected> Select Minutes </option>
+    </select>
+</label> 
+<br>
+<label>
+<span><br>End Time (Hours/Minutes) &nbsp; </span>
+    <select id="endHours" name="endHours">
+        <option selected> Select Hours </option>
+        
+    </select>
+  <select id="endMinutes" name="endMinutes">
+ 
+        <option selected> Select Minutes </option>
+        
+    </select>
+</label>
+</div>
+
+<div class="table-title">
+<h3>Pickup & DropOff</h3>
+
+<label>
+<input type="hidden" id="pickUpPointLatitide" name="pickUpPointLatitide" value="<%=json.bikeCurrentLatitide%>"</input>
+<input type="hidden" id="pickUpPointLongitude" name="pickUpPointLongitude" value="<%=json.bikeCurrentLongitude%>"> </input>
+<span> Pickup Location : <%=json.bikeCurrentLatitide%> | <%=json.bikeCurrentLongitude%> </span>
+<span> &nbsp;&nbsp;DropOff Location </span> 
+<select id="dropLocation" name="dropLocation">
+        <option selected> DropOff Location </option>
+         <option> MLK Library</option>
+          <option> Caltrain Station </option>
+           <option> Boccardo Business Center </option>
+            <option> City Hall </option>
+            <option> 101 San Fernando </option>
+    </select>
+<label>
+<%})%>
+</div>
+<br>
+
+<input type="hidden" id="bikeId" name="bikeId"></input>
+
+<input style="width:150px;"type="submit" id="submitConfirm">Confirm</button>
+</form>
+	</body>
+</html>

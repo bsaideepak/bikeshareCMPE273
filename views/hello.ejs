@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+				<link rel="stylesheet" type="text/css" href="css/style1.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+		 <link rel="stylesheet" href="css1/style.css" media="screen" type="text/css" />
+	</head>
+	<body>
+		<span href="#" class="button" id="toggle-login">Log in</span>
+  <span href="#" class="button" id="toggle-register">Register</span>
+<div id = "logomain">
+<img class = "logo" src="images/logo.png"></img></div>
+<div id="login">
+  <div id="triangle"></div>
+  <h1>Log in</h1>
+  <form action="/biker_login" method="POST" >
+    <input id ="bikerContactEmail"  name ="bikerContactEmail" type="email" placeholder="Email" />
+    <input id ="bikerPassword" name="bikerPassword" type="password" placeholder="Password" />
+    <input id ="submitLogin" type="submit" value="Log in" />
+  </form>
+</div>
+
+<div id="register">
+  <div id="triangle"></div>
+  <h1>Register</h1>
+  <form action="/signup" method="POST">
+    <input id="bikerContactName" name="bikerContactName" type="email" placeholder="Name" />
+    <input id ="bikerContactAddress" name ="bikerContactAddress" type="text" placeholder="Address" />
+    <input id ="bikerContactEmail" name ="bikerContactEmail" type="text" placeholder="Email" />
+     <input id ="bikerContactPhone" name ="bikerContactPhone" type="text" placeholder="Phone" />
+    <input id ="bikerPassword"  name ="bikerPassword" type="password" placeholder="Password" />
+    <input id ="submitRegister" type="submit" value="Register" />
+  </form>
+</div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+  <script src="js/index.js"></script>
+		<div class="cycle-outer">
+			<div class="cycle-wrapper">
+				<div class="cycle-body">
+					<div class="seat">
+						<span></span>
+					</div>
+					<div class="front-wheel-frame"></div>
+					<div class="top-frame"></div>
+					<div class="front-frame">
+						<div class="bottle-holder">
+							<span></span>
+						</div>
+					</div>
+					<div class="center-frame"></div>
+					<div class="back-frame"></div>
+					<div class="bottom-frame"></div>
+					<div class="handlebar-front"></div>
+					<div class="handlebar-curve"></div>
+				</div>
+				<div class="cycle-wheel cycle-wheel-back">
+					<div class="cycle-wheel-outer">
+						<div class="cycle-wheel-inner">
+							<div class="cycle-wheel-inner-padding">
+								<ul class="spoke-container">
+									<li class="spoke"></li>
+									<li class="spoke"></li>
+								</ul>
+								<div class="inner-disc"></div>
+								<div class="inner-disc-2"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cycle-wheel cycle-wheel-front">
+					<div class="cycle-wheel-outer">
+						<div class="cycle-wheel-inner">
+							<div class="cycle-wheel-inner-padding">
+								<ul class="spoke-container">
+									<li class="spoke"></li>
+									<li class="spoke"></li>
+								</ul>
+								<div class="inner-disc"></div>
+								<div class="inner-disc-2"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chain-up"></div>
+				<div class="chain-bottom"></div>
+				<div class="chain-rotation">
+					<div class="outer-axle"></div>
+					<div class="chain-disc-outer">
+						<div class="chain-disc-inner"></div>
+					</div>
+					
+				</div>
+				<div class="chain-rods">
+					<div class="pedal-rod"></div>
+				</div>
+			</div>
+		</div>
+		<div class = "block">
+		<h1> WHAT WE DO </h1>
+		<div class = "description">
+		<p>The Bay Area Bike Share is the region’s bike sharing system with 700 bikes and 70 stations across the region, with locations in San Francisco, Redwood City, Mountain View, Palo Alto, and San Jose. Intended to provide Bay Area residents and visitors with an additional transportation option for getting around the region, the Bay Area Bike Share is fun, easy, and affordable.<br> <br>A bike sharing system consists of a fleet of specially designed, heavy-duty, very durable bikes that are locked into a network of docking stations located throughout a region. Bay Area bikes can be rented from and returned to any station in the system, creating an efficient network with many possible combinations of start and end points.<p>
+		</div>
+		<h1> BIKES</h1>
+		<div id="mainwrapper"><!-- This #mainwrapper section contains all of our images to make them center and look proper in the browser ->  
+    <!-- Image Caption 1 -->  
+    <div id="box-1" class="box">  
+        <img id="image-1" src="images/img1.jpg"/>  
+        <span class="caption fade-caption">  
+        <p>Simple Caption</p>  
+        </span>  
+    </div>  
+  
+    <!-- Image Caption 2 -->  
+    <div id="box-2" class="box">  
+        <img id="image-2" src="images/img2.jpg"/>  
+        <span class="caption fade-caption">  
+        <h3>Full Caption</h3>  
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>  
+        </span>  
+    </div>  
+  
+    <!-- Image Caption 3 -->  
+   <div id="box-3" class="box">  
+        <img id="image-2" src="images/img3.jpg"/>  
+        <span class="caption fade-caption">  
+        <h3>Full Caption</h3>  
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>  
+        </span>  
+    </div>  
+	
+	<div id="box-3" class="box">  
+        <img id="image-2" src="images/img4.jpg"/>  
+        <span class="caption fade-caption">  
+        <h3>Full Caption</h3>  
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>  
+        </span>  
+    </div>  
+		</div>
+	</body>
+</html>
